@@ -1,0 +1,23 @@
+@use '../utilities' as *;
+
+html {
+    box-sizing: border-box;
+    font-size: var(--global-font-size);
+}
+
+body { font-family: 'SourceCodePro', sans-serif; };
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+section { padding: 1.5rem; }
+
+::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}

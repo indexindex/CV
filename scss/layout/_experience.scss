@@ -1,0 +1,28 @@
+@use '../utilities' as *;
+
+.experience {
+    grid-column: 1 / 5;
+    grid-row: 3 / 6;
+
+    &__tab {
+
+        &--heading {
+            font-size: 1rem;
+            color: var(--color-secondary);
+        
+            span {
+                font-weight: 400;
+                color: var(--color-white);
+            }
+        }
+
+        &--range {
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        &--description {
+            padding-top: .5rem;
+        }
+    }
+}

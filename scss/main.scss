@@ -1,0 +1,19 @@
+// ? [base] - for boilerplate code, standards
+// ? [components] - for smaller components like widgets
+// ? [layout] - for main parts of the site
+// ? [pages] - for page specific styles
+// ? [utilities] - for tools and helpers
+// ? [vendors] - "hey, this is not from me, not my code, not my responsibility"
+
+@use 'base/animations';
+@use 'base/base';
+@use 'base/typography';
+
+@use 'layout/grid';
+@use 'layout/intro';
+@use 'layout/about';
+@use 'layout/education';
+@use 'layout/experience';
+@use 'layout/skills';
+@use 'layout/projects';
+@use 'layout/hobby';

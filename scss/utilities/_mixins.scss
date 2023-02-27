@@ -1,0 +1,23 @@
+@mixin navBtnSetup($color, $index) {
+    position: relative;
+    box-shadow: $color 0px 0px 0px 2px;
+
+    p { color: $color; z-index: $index; }
+
+    svg {
+        z-index: $index;
+        
+        use { stroke: $color; }
+    }
+}
+
+@mixin h2($color) {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $color;
+    margin-bottom: 3rem;
+}
+
+@mixin boxShadow($color, $valueX, $valueY, $blur, $radius) {
+    box-shadow: $color $valueX $valueY $blur $radius;
+}

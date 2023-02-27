@@ -1,0 +1,49 @@
+@use 'functions' as *;
+
+%navBtnClose {
+    .nav-btn--close {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+        }
+
+        &::before {
+            width: calc(100% + 4px);
+            height: 0px;
+            top: 50%;
+            left: 0;
+            transform: translateX(-2px) translateY(-50%);
+            transition: background-color .5s ease-in-out .5s, height .5s ease-in-out;
+        }
+
+        &:hover::before { height: calc(100% - pxToRem(15px)); }
+
+        &::after {
+            width: 0px;
+            height: calc(100% + 4px);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-2px);
+            transition: background-color .5s ease-in-out .5s, width .5s ease-in-out;
+        }
+
+        &:hover::after { width: calc(100% - pxToRem(15px)); }
+    }
+}
+
+%hideContent {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s ease-in-out,
+                transform .5s ease-in-out .5s;
+}
+
+%showContent {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity .5s ease-in-out .5s,
+                transform .5s ease-in-out;
+}

@@ -1,0 +1,15 @@
+@use '../utilities' as *;
+
+body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, min-content);
+    gap: 1rem;
+    background-color: var(--color-secondary);
+    padding: 1rem;
+}
+
+section {
+    background-color: var(--color-primary);
+    border-radius: pxToRem(10px);
+}

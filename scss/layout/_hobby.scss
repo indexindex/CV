@@ -1,0 +1,6 @@
+@use '../utilities' as *;
+
+.hobby {
+    grid-column: 3 / -1;
+    grid-row: 12 / 13;
+}

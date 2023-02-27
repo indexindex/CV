@@ -1,0 +1,10 @@
+@use '../utilities' as *;
+
+.about {
+    grid-column: 5 / -1;
+    grid-row: 3 / 5;
+
+    &--heading {}
+
+    &--text {}
+}

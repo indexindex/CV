@@ -1,0 +1,105 @@
+@use '../utilities' as *;
+
+.intro {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+
+    &__sections {
+        display: grid;
+        grid-template-columns: min-content max-content 1fr;
+        grid-template-rows: repeat(2, min-content);
+        gap: 2rem 3rem;
+
+        .profile-section {
+            grid-column: 1 / 2;
+            grid-row: 1 / -1;
+            align-self: center;
+
+            img {
+                box-sizing: content-box;
+                width: pxToRem(150px);
+                height: pxToRem(150px);
+                object-fit: cover;
+                object-position: 0 pxToRem(-25px);
+                border: pxToRem(12px) solid var(--color-secondary);
+                border-radius: 50%;
+            }
+        }
+
+        .main-section {
+            grid-column: 2 / 3;
+
+            &--name {
+                display: flex;
+                flex-direction: column;
+                font-size: pxToRem(48px);
+                font-weight: 700;
+                line-height: .7;
+                text-transform: uppercase;
+            
+                span { color: var(--color-secondary); }
+            }
+
+            &--profession {
+                font-size: 1rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--color-white);
+                padding-top: 1rem;
+            }
+        }
+
+        .contact-section {
+            grid-column: 3 / -1;
+            display: flex;
+            flex-direction: column;
+            row-gap: .5rem;
+
+            &--contact {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+
+                svg {
+                    fill: var(--color-secondary);
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                a {
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .social-section {
+            grid-column: 2 / -1;
+            grid-row: 2 / -1;
+            align-self: end;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+
+            &--contact {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+
+                svg {
+                    fill: var(--color-white);
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                a {
+                    font-size: pxToRem(12px);
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

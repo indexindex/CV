@@ -1,0 +1,6 @@
+@use '../utilities' as *;
+
+.skills {
+    grid-column: 3 / 5;
+    grid-row: 6 / 12;
+}

@@ -1,0 +1,6 @@
+@use '../utilities' as *;
+
+.projects {
+    grid-column: 5 / -1;
+    grid-row: 5 / 12;
+}
