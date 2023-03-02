@@ -32,3 +32,10 @@ p {
     font-size: pxToRem(12px);
     color: var(--color-gray);
 }
+
+.label {
+    color: var(--color-white);
+   padding: 0px 4px 1px 4px;
+   border-radius: 3px;
+   background-color: rgba(var(--color-secondary-rgb), .5);
+}

@@ -2,6 +2,7 @@
   --global-font-size: 16px;
   --color-primary: #1d1e2c;
   --color-secondary: #2dc653;
+  --color-secondary-rgb: 45, 198, 83;
   --color-white: #f2f4f3;
   --color-gray: #adb5bd;
 }
@@ -62,6 +63,13 @@ h2 {
 p {
   font-size: 0.75rem;
   color: var(--color-gray);
+}
+
+.label {
+  color: var(--color-white);
+  padding: 0px 4px 1px 4px;
+  border-radius: 3px;
+  background-color: rgba(var(--color-secondary-rgb), 0.5);
 }
 
 body {
@@ -180,6 +188,31 @@ section {
 .experience {
   grid-column: 1/5;
   grid-row: 3/6;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.experience--heading {
+  margin-bottom: 0;
+}
+.experience__tab {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+.experience__tab::before {
+  content: "";
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-right: 0.875rem;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+}
+.experience__tab > * {
+  grid-column: 2/-1;
 }
 .experience__tab--heading {
   font-size: 1rem;
@@ -194,7 +227,7 @@ section {
   color: var(--color-white);
 }
 .experience__tab--description {
-  padding-top: 0.5rem;
+  padding-top: 5px;
 }
 
 .skills {
