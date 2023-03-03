@@ -16,7 +16,7 @@ console.log('IS DEV:', isDev);
 // * --- FUNCTIONS --- * //
 const makePage = page => {
     return {
-        filename: `html/${page}`,
+        filename: `${page}`,
         template: `html/${page}`, // ? custom html file location
         minify: {
             collapseWhitespace: isProd, // ? minify HTML if we are in production mode
@@ -87,7 +87,7 @@ module.exports = {
     entry: { main: ['core-js/stable', 'regenerator-runtime/runtime', './index.js'] },
     output: {
         filename: 'js/[name].bundle.js', // ? bundled js file (name refers to entry file name)
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         clean: !isDevServer
     },
     resolve: {
