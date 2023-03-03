@@ -2,6 +2,7 @@
 
 @font-face {
     font-family: 'SourceCodePro';
+    /* webpackIgnore: true */
     src: url('../../assets/font/SourceCodePro.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
@@ -9,6 +10,7 @@
 
 @font-face {
     font-family: 'SourceCodePro';
+    /* webpackIgnore: true */
     src: url('../../assets/font/SourceCodePro.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
@@ -16,6 +18,7 @@
 
 @font-face {
     font-family: 'SourceCodePro';
+    /* webpackIgnore: true */
     src: url('../../assets/font/SourceCodePro-Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
@@ -34,8 +37,10 @@ p {
 }
 
 .label {
+    line-height: 2;
+    white-space: nowrap;
     color: var(--color-white);
-   padding: 0px 4px 1px 4px;
-   border-radius: 3px;
-   background-color: rgba(var(--color-secondary-rgb), .5);
+    padding: 0px 4px 1px 4px;
+    border-radius: 3px;
+    background-color: rgba(var(--color-secondary-rgb), .5);
 }

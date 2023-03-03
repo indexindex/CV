@@ -32,6 +32,12 @@ fs.readFileSync(`${__dirname}/../assets/svg/facebook-f.svg`, 'utf-8'));
 spriter.add(`${__dirname}/../assets/svg/linkedin-in.svg`, null, 
 fs.readFileSync(`${__dirname}/../assets/svg/linkedin-in.svg`, 'utf-8'));
 
+spriter.add(`${__dirname}/../assets/svg/graduation-cap-solid.svg`, null, 
+fs.readFileSync(`${__dirname}/../assets/svg/graduation-cap-solid.svg`, 'utf-8'));
+
+spriter.add(`${__dirname}/../assets/svg/briefcase-solid.svg`, null, 
+fs.readFileSync(`${__dirname}/../assets/svg/briefcase-solid.svg`, 'utf-8'));
+
 spriter.compile((error, result) => {
     for (const mode of Object.values(result)) {
         for (const resource of Object.values(mode)) {

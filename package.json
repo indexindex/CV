@@ -3,15 +3,41 @@
   "version": "1.0.0",
   "description": "CV about Andri Suvorov",
   "main": "index.js",
+  "browserslist": "> 0.25%, not dead",
   "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "serve": "cross-env NODE_ENV=development webpack serve --mode development",
+    "prod": " cross-env NODE_ENV=production webpack --mode production",
     "sass-dev": "sass --watch --update --style=expanded scss:css",
     "sass-prod": "sass --no-source-map --style=compressed scss:css",
     "sprite": "node js/sprite.js"
   },
   "author": "Andri Suvorov",
   "license": "ISC",
+  "private": true,
   "devDependencies": {
-    "sass": "^1.58.0"
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.25.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "ftp-deploy": "^2.4.3",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.3.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.0.2",
+    "sharp": "^0.31.3",
+    "terser-webpack-plugin": "^5.3.5",
+    "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.10.0",
+    "webpack-shell-plugin-next": "^2.2.2"
   },
   "dependencies": {
     "svg-sprite": "^2.0.2"
