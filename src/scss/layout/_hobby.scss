@@ -3,4 +3,8 @@
 .hobby {
     grid-column: 3 / -1;
     grid-row: 12 / 13;
+
+    @include respond(tablet) {
+        order: 6;
+    }
 }

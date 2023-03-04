@@ -104,8 +104,10 @@ module.exports = {
         port: 8080,
         hot: false,
         liveReload: true,
-        watchFiles: ['dist/**/*'],
-        open: ['http://localhost:8080/html/index.html']
+        // ! watchFiles: ['dist/**/*'],
+        // ! open: ['http://localhost:8080/html/index.html'],
+        watchFiles: ['docs/**/*'],
+        open: ['http://localhost:8080/index.html']
     },
     devtool: isDev ? 'source-map' : false, // ? if we are in development mode add source-maps, otherwise "stay silent"
     plugins: [

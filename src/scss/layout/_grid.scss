@@ -5,11 +5,21 @@ body {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, min-content);
     gap: 1rem;
+    min-width: pxToRem(375px);
+    max-width: pxToRem(1200px);
     background-color: var(--color-secondary);
+    margin: 0 auto;
     padding: 1rem;
 }
 
 section {
     background-color: var(--color-primary);
     border-radius: pxToRem(10px);
+
+    &.cv-section {
+        @include respond(tablet) {
+            grid-column: 1 / -1;
+            grid-row: unset;
+        }
+    }
 }

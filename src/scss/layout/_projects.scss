@@ -3,4 +3,8 @@
 .projects {
     grid-column: 5 / -1;
     grid-row: 5 / 12;
+
+    @include respond(tablet) {
+        order: 5;
+    }
 }

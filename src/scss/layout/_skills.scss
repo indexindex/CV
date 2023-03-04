@@ -3,4 +3,10 @@
 .skills {
     grid-column: 3 / 5;
     grid-row: 6 / 12;
+
+    @include respond(tablet) {
+        order: 3;
+    }
+
+    display: flex;
 }
