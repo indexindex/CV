@@ -9,8 +9,6 @@
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "serve": "cross-env NODE_ENV=development webpack serve --mode development",
     "prod": " cross-env NODE_ENV=production webpack --mode production",
-    "sass-dev": "sass --watch --update --style=expanded scss:css",
-    "sass-prod": "sass --no-source-map --style=compressed scss:css",
     "sprite": "node js/sprite.js"
   },
   "author": "Andri Suvorov",

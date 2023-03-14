@@ -15,9 +15,11 @@ body { font-family: 'SourceCodePro', sans-serif; };
     box-sizing: inherit;
 }
 
-section { padding: 1.5rem; }
-
 ::selection {
     background-color: var(--color-secondary);
     color: var(--color-primary);
 }
+
+section { padding: 1.5rem; }
+
+img { user-select: none; }

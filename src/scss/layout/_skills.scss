@@ -3,10 +3,110 @@
 .skills {
     grid-column: 3 / 5;
     grid-row: 6 / 12;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    height: pxToRem(250px);
+    overflow-y: hidden;
 
     @include respond(tablet) {
         order: 3;
     }
 
-    display: flex;
+    &--heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &-wrapper {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+        position: relative;
+        overflow-y: scroll;
+        scrollbar-width: none; // ? Firefox
+
+        &::-webkit-scrollbar { width: 0; height: 0; }
+    }
+
+    &__branches {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: pxToRem(600px);
+
+        &--branch-main {
+            width: pxToRem(6px);
+            height: 100%;
+            border-radius: 5px;
+            background-color: var(--color-secondary);
+        }
+
+        & > [class*='--branch'] {
+            position: absolute;
+            top: 0;
+            color: var(--color-secondary);
+            box-sizing: content-box;
+        }
+
+        &--branch-html5 {
+            width: pxToRem(110px);
+            height: pxToRem(55px);
+            border: solid 4px currentColor;
+            border-color: transparent transparent currentColor currentColor;
+            border-radius: 0 0 0 pxToRem(10px);
+            transform: translate(pxToRem(-58px), pxToRem(60px));
+        }
+    }
+
+    &__front-end,
+    &__back-end,
+    &__bundlers,
+    &__pkgmanagers {
+        display: flex;
+        justify-content: center;
+
+        &--skill {
+            display: none;
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &__front-end {
+
+        &--skill {
+            position: absolute;
+            top: 0;
+
+            &-html5 {
+                display: block;
+                transform: translate(pxToRem(-115px), pxToRem(40px));
+            }
+
+            &-css3 {
+                display: block;
+            }
+        }
+    }
+    
+    &__back-end {
+
+        &--skill {
+            width: 2rem;
+        }
+    }
+
+    &__bundlers {
+
+        &--skill {
+            width: 2rem;
+        }
+    }
+
+    &__pkgmanagers {
+
+        &--skill {
+            width: 2rem;
+        }
+    }
 }
