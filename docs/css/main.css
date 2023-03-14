@@ -304,7 +304,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: min-content 1fr;
-  height: 15.625rem;
+  height: 18.75rem;
   overflow-y: hidden;
 }
 @media only screen and (max-width: 56.25em) {
@@ -316,14 +316,14 @@ section {
   grid-column: 1/-1;
   grid-row: 1/2;
 }
-.skills-wrapper {
+.skills__wrapper {
   grid-column: 1/-1;
   grid-row: 2/-1;
   position: relative;
   overflow-y: scroll;
   scrollbar-width: none;
 }
-.skills-wrapper::-webkit-scrollbar {
+.skills__wrapper::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
@@ -333,25 +333,61 @@ section {
   position: relative;
   height: 37.5rem;
 }
-.skills__branches--branch-main {
-  width: 0.375rem;
-  height: 100%;
-  border-radius: 5px;
-  background-color: var(--color-secondary);
-}
 .skills__branches > [class*="--branch"] {
   position: absolute;
   top: 0;
   color: var(--color-secondary);
   box-sizing: content-box;
 }
-.skills__branches--branch-html5 {
-  width: 6.875rem;
-  height: 3.4375rem;
+.skills__branches > [class*="--branch"] > [class*=skill] {
+  width: 2rem;
+  height: 2rem;
+}
+.skills__branches > [class*="--branch"] .skill-html5,
+.skills__branches > [class*="--branch"] .skill-css3 {
+  transform: translate(-1.125rem, -1.75rem);
+}
+.skills__branches > [class*="--branch"] .skill-html5 {
+  fill: #FF5722;
+}
+.skills__branches > [class*="--branch"] .skill-css3 {
+  fill: #2196F3;
+}
+.skills__branches > [class*="--branch"] .skill-sass {
+  width: 1.5rem;
+  fill: #CD6799;
+  transform: translate(-1.875rem, -5.9375rem);
+}
+.skills__branches > [class*="--branch"] .skill-bootstrap {
+  width: 1.5rem;
+  fill: #8B12FC;
+  transform: translate(3px, -8.25rem);
+}
+.skills__branches > [class*="--branch"] .skill-zurb {
+  width: 1.25rem;
+  fill: #00A6C9;
+  transform: translate(-0.75rem, -6.5625rem);
+}
+.skills__branches--branch-main {
+  width: 0.375rem;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--color-secondary);
+}
+.skills__branches--branch-html5, .skills__branches--branch-css3 {
   border: solid 4px currentColor;
   border-color: transparent transparent currentColor currentColor;
   border-radius: 0 0 0 0.625rem;
-  transform: translate(-3.625rem, 3.75rem);
+}
+.skills__branches--branch-html5 {
+  width: 6.875rem;
+  height: 4.375rem;
+  transform: translate(-3.5625rem, 5.3125rem);
+}
+.skills__branches--branch-css3 {
+  width: 3.4375rem;
+  height: 2.1875rem;
+  transform: translate(-1.8125rem, 5.3125rem);
 }
 .skills__front-end, .skills__back-end, .skills__bundlers, .skills__pkgmanagers {
   display: flex;
@@ -361,26 +397,6 @@ section {
   display: none;
   width: 2rem;
   height: 2rem;
-}
-.skills__front-end--skill {
-  position: absolute;
-  top: 0;
-}
-.skills__front-end--skill-html5 {
-  display: block;
-  transform: translate(-7.1875rem, 2.5rem);
-}
-.skills__front-end--skill-css3 {
-  display: block;
-}
-.skills__back-end--skill {
-  width: 2rem;
-}
-.skills__bundlers--skill {
-  width: 2rem;
-}
-.skills__pkgmanagers--skill {
-  width: 2rem;
 }
 
 .projects {
