@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content 1fr;
-    height: pxToRem(250px);
+    height: pxToRem(300px);
     overflow-y: hidden;
 
     @include respond(tablet) {
@@ -18,7 +18,7 @@
         grid-row: 1 / 2;
     }
 
-    &-wrapper {
+    &__wrapper {
         grid-column: 1 / -1;
         grid-row: 2 / -1;
         position: relative;
@@ -34,6 +34,39 @@
         position: relative;
         height: pxToRem(600px);
 
+        & > [class*='--branch'] {
+            position: absolute;
+            top: 0;
+            color: var(--color-secondary);
+            box-sizing: content-box;
+
+            & > [class*='skill'] {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .skill-html5,
+            .skill-css3 { transform: translate(pxToRem(-18px), pxToRem(-28px)); }
+
+            .skill-html5 { fill: #FF5722; }
+            .skill-css3 { fill: #2196F3; }
+            .skill-sass {
+                width: 1.5rem;
+                fill: #CD6799;
+                transform: translate(pxToRem(-30px), pxToRem(-95px));
+            }
+            .skill-bootstrap {
+                width: 1.5rem;
+                fill: #8B12FC;
+                transform: translate(3px, pxToRem(-132px));
+            }
+            .skill-zurb {
+                width: pxToRem(20px);
+                fill: #00A6C9;
+                transform: translate(pxToRem(-12px), pxToRem(-105px));
+            }
+        }
+
         &--branch-main {
             width: pxToRem(6px);
             height: 100%;
@@ -41,22 +74,37 @@
             background-color: var(--color-secondary);
         }
 
-        & > [class*='--branch'] {
-            position: absolute;
-            top: 0;
-            color: var(--color-secondary);
-            box-sizing: content-box;
+        &--branch-html5,
+        &--branch-css3 {
+            border: solid 4px currentColor;
+            border-color: transparent transparent currentColor currentColor;
+            border-radius: 0 0 0 pxToRem(10px);
         }
 
         &--branch-html5 {
             width: pxToRem(110px);
-            height: pxToRem(55px);
-            border: solid 4px currentColor;
-            border-color: transparent transparent currentColor currentColor;
-            border-radius: 0 0 0 pxToRem(10px);
-            transform: translate(pxToRem(-58px), pxToRem(60px));
+            height: pxToRem(70px);
+            transform: translate(pxToRem(-57px), pxToRem(85px));
+        }
+
+        &--branch-css3 {
+            width: pxToRem(55px);
+            height: pxToRem(35px);
+            transform: translate(pxToRem(-29px), pxToRem(85px));
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     &__front-end,
     &__back-end,
@@ -69,44 +117,6 @@
             display: none;
             width: 2rem;
             height: 2rem;
-        }
-    }
-
-    &__front-end {
-
-        &--skill {
-            position: absolute;
-            top: 0;
-
-            &-html5 {
-                display: block;
-                transform: translate(pxToRem(-115px), pxToRem(40px));
-            }
-
-            &-css3 {
-                display: block;
-            }
-        }
-    }
-    
-    &__back-end {
-
-        &--skill {
-            width: 2rem;
-        }
-    }
-
-    &__bundlers {
-
-        &--skill {
-            width: 2rem;
-        }
-    }
-
-    &__pkgmanagers {
-
-        &--skill {
-            width: 2rem;
         }
     }
 }
