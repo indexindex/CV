@@ -1,0 +1,89 @@
+@use '../utilities' as *;
+
+@keyframes expandProfile {
+    from {
+        width: pxToRem(174px);
+        height: pxToRem(174px);
+        object-position: 0 pxToRem(-25px);
+        border: pxToRem(12px) solid var(--color-secondary);
+        border-radius: 50%;
+    }
+
+    25% {
+        width: pxToRem(150px);
+        height: pxToRem(150px);
+    }
+
+    to {
+        width: pxToRem(450px);
+        height: pxToRem(450px);
+        object-position: center;
+        border: 3px solid var(--color-secondary);
+        border-radius: pxToRem(10px);
+    }
+}
+
+@include respond(phone) {
+    @keyframes expandProfile {
+        to {
+            width: calc(100% - 3rem);
+            height: pxToRem(450px);
+            object-position: center;
+            border: 3px solid var(--color-secondary);
+            border-radius: pxToRem(10px);
+        }
+    }
+
+    @keyframes reverseProfile {
+        from {
+            width: calc(100% - 3rem);
+            height: pxToRem(450px);
+            object-position: center;
+            border: 3px solid var(--color-secondary);
+            border-radius: pxToRem(10px);
+        }
+    }
+}
+
+@keyframes reverseProfile {
+    0% {
+        width: pxToRem(450px);
+        height: pxToRem(450px);
+        object-position: center;
+        border: 3px solid var(--color-secondary);
+        border-radius: pxToRem(10px);
+    }
+
+    75% {
+        width: pxToRem(150px);
+        height: pxToRem(150px);
+    }
+
+    100% {
+        width: pxToRem(174px);
+        height: pxToRem(174px);
+        object-position: 0 pxToRem(-25px);
+        border: pxToRem(12px) solid var(--color-secondary);
+        border-radius: 50%;
+    }
+}
+
+
+
+@keyframes welcome {
+    from, 25% { gap: 0; padding: 0; }
+
+    to { gap: 1rem; padding: 1rem; }
+}
+
+@keyframes sectionBorder {
+    from { border-radius: 0; }
+
+    to { border-radius: pxToRem(10px); }
+}
+
+@keyframes contentOpacity {
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+}

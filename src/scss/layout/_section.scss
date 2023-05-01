@@ -1,0 +1,13 @@
+@use '../utilities' as *;
+
+// ? higher specificity
+section.cv-section {
+    padding: 1.5rem;
+    border-radius: pxToRem(10px);
+    background-color: var(--color-primary);
+
+    @include respond(tablet) {
+        grid-column: 1 / -1;
+        grid-row: unset;
+    }
+}

@@ -1,0 +1,108 @@
+@use '../utilities' as *;
+
+.preferences {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    display: grid;
+    grid-template-columns: 2rem 0fr;
+    grid-template-rows: 2rem 0fr;
+    padding: pxToRem(10px);
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    overflow: hidden;
+    z-index: 20;
+    transition: grid-template-columns .5s var(--transition) .5s,
+                grid-template-rows .5s var(--transition) .5s,
+                border .5s var(--transition) .5s,
+                border-radius .5s var(--transition) .5s,
+                background-color .5s var(--transition) .5s;
+
+    &.open {
+        grid-template-columns: 2rem 1fr;
+        grid-template-rows: 2rem 1fr;
+        border: 3px solid var(--color-secondary);
+        border-radius: pxToRem(10px);
+        background-color: var(--color-primary);
+        transition: grid-template-columns .5s var(--transition),
+                    grid-template-rows .5s var(--transition),
+                    border .5s var(--transition),
+                    border-radius .5s var(--transition),
+                    background-color .5s var(--transition);
+
+        .preferences__options {
+            opacity: 1;
+            transition: opacity .3s var(--transition) .5s;
+        }
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-white);
+    }
+
+    // ? preferences toggler
+    .gear-solid {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        cursor: pointer;
+        z-index: 21;
+    }
+
+    &__options {
+        grid-column: 2 / 4;
+        grid-row: 1 / 3;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        opacity: 0;
+        transition: opacity .3s var(--transition);
+
+        .color-theme,
+        .reduce-animations {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 5px;
+            position: relative;
+    
+            p { text-align: center; }
+
+            &__inputs,
+            &__options {
+                margin-top: .5rem;
+
+                &--input {
+                    width: pxToRem(25px);
+                    height: pxToRem(25px);
+                    border: 1px solid var(--color-white);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    overflow: hidden;
+    
+                    &::-webkit-color-swatch-wrapper { padding: 0; }
+                }
+            }
+
+            &__options {
+                display: flex;
+                column-gap: pxToRem(10px);
+
+                &--option {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 5px;
+                    width: pxToRem(80px);
+                }
+
+                &--description {
+                    width: pxToRem(170px);
+                    margin-top: .5rem;
+                }
+            }
+        }
+    }
+}

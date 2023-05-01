@@ -1,0 +1,59 @@
+@use '../utilities' as *;
+
+// ? normal font style
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../assets/font/SourceCodePro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// ? bold font style
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../assets/font/SourceCodePro.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// ? italic font style
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../assets/font/SourceCodePro-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+h1, h2 { color: var(--color-white); }
+
+h2 {
+    font-size: pxToRem(20px);
+    margin-bottom: .5rem;
+
+    &.final-words {
+        grid-column: 1 / -1;
+        justify-self: center;
+        order: 7;
+        padding: 3rem 0 1rem 0;
+    }
+}
+
+p {
+    font-size: pxToRem(12px);
+    color: var(--color-gray);
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+}
+
+// ? used in "Work Experience" section
+.label {
+    line-height: 2;
+    white-space: nowrap;
+    color: var(--color-white);
+    padding: 0px 4px 1px 4px;
+    border-radius: 3px;
+    background-color: rgba(var(--color-secondary-rgb), .5);
+}

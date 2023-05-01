@@ -1,0 +1,13 @@
+%absCenterY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%hideScrollbar {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none; // ? for Firefox
+
+    &::-webkit-scrollbar { width: 0; height: 0; }
+}

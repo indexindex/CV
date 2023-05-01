@@ -1,0 +1,254 @@
+@use '../utilities' as *;
+
+.skills {
+    grid-column: 3 / 5;
+    grid-row: 6 / 12;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    position: relative;
+    min-width: pxToRem(300px);
+    min-height: pxToRem(450px);
+    overflow: hidden;
+
+    @include respond(tablet) { order: 3; }
+
+    &--heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &--toggle-skill-view {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1rem;
+
+        .roadmap-view,
+        .list-view {
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .roadmap-view { fill: var(--color-secondary); }
+
+        .list-view { fill: var(--color-white); }
+    }
+
+    &__wrapper {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 100%);
+        grid-template-rows: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        &.list-view-active {
+
+            .skills__branches,
+            .skills__list { transform: translateX(-100%); }
+        }
+    }
+
+    &__branches,
+    &__list {
+        grid-row: 1 / 2;
+        transform: translateX(1px);
+        transition: transform .3s var(--transition);
+        @extend %hideScrollbar;
+    }
+
+    &__branches {
+        grid-column: 1 / 2;
+        display: flex;
+        justify-content: center;
+
+        // ? all direct children containing '--branch' in class name
+        & > [class*='--branch'] {
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            color: var(--color-secondary);
+
+            & > [class*='skill'] {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .skill-html5 {
+                transform: translate(pxToRem(-18px), pxToRem(-28px));
+                fill: #FF5722;
+            }
+            .skill-css3 {
+                transform: translate(pxToRem(-18px), pxToRem(-28px));
+                fill: #2196F3;
+            }
+            .skill-sass {
+                width: 1.5rem;
+                transform: translate(pxToRem(-30px), pxToRem(-95px));
+                fill: #CD6799;
+            }
+            .skill-bootstrap {
+                width: 1.5rem;
+                transform: translate(3px, pxToRem(-132px));
+                fill: #8B12FC;
+            }
+            .skill-zurb {
+                width: pxToRem(20px);
+                transform: translate(pxToRem(-12px), pxToRem(-105px));
+                fill: #00A6C9;
+            }
+            .skill-js {
+                transform: translate(pxToRem(18px), pxToRem(-29px));
+                fill: #FFDF00;
+            }
+            .skill-react {
+                width: 1.5rem;
+                transform: translate(pxToRem(35px), pxToRem(-100px));
+                fill: #61DAFB;
+            }
+            .skill-typescript {
+                width: pxToRem(20px);
+                transform: translate(pxToRem(32px), pxToRem(-95px));
+            }
+            .skill-jquery {
+                width: 1.5rem;
+                transform: translate(pxToRem(48px), pxToRem(-100px));
+            }
+            .skill-node {
+                width: 2.5rem;
+                transform: translate(pxToRem(22px), pxToRem(-35px));
+                fill: #8CC84B;
+            }
+            .skill-express {
+                width: 2.5rem;
+                transform: translate(pxToRem(-10px), pxToRem(-45px));
+            }
+            .skill-mongodb {
+                transform: translate(pxToRem(-18px), pxToRem(-40px));
+            }
+            .skill-webpack {
+                transform: translate(pxToRem(-35px), pxToRem(-14px));
+            }
+            .skill-browserify {
+                width: 1.5rem;
+                transform: translate(pxToRem(-10px), pxToRem(-25px));
+            }
+            .skill-npm {
+                transform: translate(pxToRem(70px), pxToRem(-14px));
+                fill: #CB3837;
+            }
+            .skill-yarn {
+                width: 1.5rem;
+                transform: translate(pxToRem(60px), pxToRem(-25px));
+                fill: #2C8EBB;
+            }
+        }
+
+        // ? main center line
+        &--branch-main {
+            width: pxToRem(6px);
+            height: pxToRem(600px);
+            border-radius: 5px;
+            background-color: var(--color-secondary);
+            z-index: 1;
+        }
+
+        // ? left side branches (curved)
+        &--branch-html5,
+        &--branch-css3,
+        &--branch-database {
+            border: solid 4px currentColor;
+            border-color: transparent transparent currentColor currentColor;
+            border-radius: 0 0 0 pxToRem(10px);
+        }
+
+        // ? right side branches (curved)
+        &--branch-js,
+        &--branch-node {
+            text-align: right;
+            border: solid 4px currentColor;
+            border-color: transparent currentColor currentColor transparent;
+            border-radius: 0 0 pxToRem(10px) 0;
+        }
+
+        // ? individual branches
+        &--branch-html5 {
+            width: pxToRem(110px);
+            height: pxToRem(70px);
+            transform: translate(pxToRem(-57px), pxToRem(85px));
+        }
+        &--branch-css3 {
+            width: pxToRem(55px);
+            height: pxToRem(35px);
+            transform: translate(pxToRem(-29px), pxToRem(85px));
+        }
+        &--branch-js {
+            width: pxToRem(65px);
+            height: pxToRem(40px);
+            transform: translate(pxToRem(35px), pxToRem(55px));
+        }
+        &--branch-node {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: pxToRem(100px);
+            height: pxToRem(80px);
+            transform: translate(pxToRem(52px), pxToRem(260px));
+        }
+        &--branch-database {
+            width: pxToRem(80px);
+            height: pxToRem(35px);
+            transform: translate(pxToRem(-42px), pxToRem(280px));
+        }
+        &--branch-bundlers,
+        &--branch-pkgmanagers {
+            width: pxToRem(65px);
+            height: 4px;
+            background-color: var(--color-secondary);
+        }
+        &--branch-bundlers {
+            transform: translate(pxToRem(-35px), pxToRem(410px));
+        }
+        &--branch-pkgmanagers {
+            transform: translate(pxToRem(35px), pxToRem(480px));
+        }
+    }
+
+    &__list {
+        grid-column: 2 / 3;
+
+        // ? headings
+        p {
+            font-size: pxToRem(20px);
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 5px;
+        }
+
+        span { font-size: pxToRem(12px); }
+
+        svg {
+            align-self: center;
+            width: pxToRem(20px);
+            height: pxToRem(20px);
+
+            &.skill-html5 { fill: #FF5722; }
+            &.skill-css3 { fill: #2196F3; }
+            &.skill-sass { fill: #CD6799; }
+            &.skill-bootstrap { fill: #8B12FC; }
+            &.skill-zurb { fill: #00A6C9; }
+            &.skill-js { fill: #FFDF00; }
+            &.skill-react { fill: #61DAFB; }
+            &.skill-node { fill: #8CC84B; }
+            &.skill-npm { fill: #CB3837; }
+            &.skill-yarn { fill: #2C8EBB; }
+        }
+    }
+}

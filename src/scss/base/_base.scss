@@ -1,0 +1,155 @@
+@use '../utilities' as *;
+
+html {
+    box-sizing: border-box;
+    font-size: var(--global-font-size);
+
+    &:focus-within { scroll-behavior: smooth; }
+}
+
+html, body {
+    @include respond(tablet) {
+        overflow-x: hidden;
+    }
+}
+
+::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+    /* 
+        * Some users might use high-contrast theme to navigate websites, therefore without
+        * removing outline and instead setting it's color to "transparent", users can then
+        * see what element is focused.
+        * Once the theme has been changed, browser will change previously defined colors,
+        * transparent color is now changed to some other color but outline is still present.
+    */
+    outline-color: transparent;
+}
+
+// ? main grid area
+body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, min-content);
+    gap: 1rem;
+    font-family: 'SourceCodePro', sans-serif;
+    min-width: pxToRem(375px);
+    max-width: pxToRem(1200px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--color-secondary);
+
+    &.welcome {
+        // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
+        animation: .5s var(--transition) 0s 1 alternate forwards running welcome;
+
+        section.cv-section {
+            pointer-events: none;
+            // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
+            animation: .5s var(--transition) 0s 1 alternate forwards running sectionBorder;
+
+            & > * {
+                opacity: 0;
+                // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
+                animation: .5s var(--transition) .5s 1 alternate forwards running contentOpacity;
+            }
+        }
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: pxToRem(10px);
+    list-style-type: none;
+
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-secondary);
+    }
+}
+
+a {
+    text-decoration-skip-ink: auto;
+    
+    /* 
+        * Browsers can now set their own focus listener,
+        * where ":focus" becomes a styling decision and
+        * ":focus-visible" is decided by browser when navigating through
+        * website with tab (or click for inputs).
+    */
+    &:focus-visible { outline: 2px solid var(--color-secondary); }
+}
+
+.unclickable { pointer-events: none; }
+
+
+
+/* 
+    * Some users might not want to see animations on page,
+    * media query provided for their preference.
+*/
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within { scroll-behavior: auto; }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+html.no-motion {
+    &:focus-within { scroll-behavior: auto; }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @include respond(phone) {
+        .cv-section {
+            opacity: 0;
+            transition: transform .5s var(--transition),
+                        opacity .5s var(--transition);
+        
+            &--show {
+                transform: translateX(0%) !important;
+                opacity: 1;
+            }
+
+            &:nth-child(odd) { transform: translateX(-75%); }
+            &:nth-child(even) { transform: translateX(75%); }
+        }
+    }
+}

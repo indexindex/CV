@@ -1,0 +1,22 @@
+// ? [base] - for boilerplate code, standards
+// ? [components] - for smaller components like widgets
+// ? [layout] - for main parts of the site
+// ? [utilities] - for tools and helpers
+
+@use 'base/animations';
+@use 'base/base';
+@use 'base/typography';
+
+@use 'components/cookie-box';
+@use 'components/preferences';
+@use 'components/splide-carousel';
+@use 'components/switcher';
+
+@use 'layout/about';
+@use 'layout/education';
+@use 'layout/experience';
+@use 'layout/hobby';
+@use 'layout/intro';
+@use 'layout/projects';
+@use 'layout/section';
+@use 'layout/skills';
