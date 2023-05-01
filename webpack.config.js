@@ -16,7 +16,7 @@ console.log('IS DEV:', isDev);
 // * --- FUNCTIONS --- * //
 const makePage = page => {
     return {
-        filename: `html/${page}`,
+        filename: `${page}`,
         template: `html/${page}`, // ? custom html file location
         minify: {
             collapseWhitespace: isProd, // ? minify HTML if we are in production mode
