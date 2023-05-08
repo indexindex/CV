@@ -1,5 +1,6 @@
 import '@scss/main.scss';
 import cookie from '@js/modules/cookie';
+import pointers from '@js/modules/pointers';
 import preferences from '@js/modules/preferences';
 import sectionObserver from '@js/modules/section-observer';
 import toggleProfile from '@js/modules/toggle-profile';
@@ -16,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.remove('welcome');
         cookie.initialize();
+        pointers.initialize();
         toggleProfile.initialize();
         toggleSkillView.initialize();
 

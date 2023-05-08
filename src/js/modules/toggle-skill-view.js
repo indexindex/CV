@@ -1,4 +1,5 @@
 import cookie from '@js/modules/cookie';
+import pointers from '@js/modules/pointers';
 
 const toggleSkillView = {
     roadmapView: document.querySelector('.roadmap-view'),
@@ -20,6 +21,7 @@ const toggleSkillView = {
         listView.addEventListener('click', () => {
             skillsWrapper.classList.add('list-view-active');
             cookie.setCookie('list-view', true, 1);
+            pointers.hidePointer('skill-view-pointer');
         })
     }
 }

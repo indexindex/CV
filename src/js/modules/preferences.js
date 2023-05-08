@@ -1,4 +1,5 @@
 import cookie from '@js/modules/cookie';
+import pointers from '@js/modules/pointers';
 import sectionObserver from '@js/modules/section-observer';
 
 const preferences = {
@@ -16,6 +17,7 @@ const preferences = {
             container.classList.toggle('open');
             container.classList.add('unclickable');
             profileImg.classList.add('unclickable');
+            pointers.hidePointer('preferences-pointer');
 
             setTimeout(() => {
                 container.classList.remove('unclickable');

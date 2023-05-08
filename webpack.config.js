@@ -111,7 +111,7 @@ module.exports = {
         hot: false,
         liveReload: true,
         watchFiles: ['dist/**/*'],
-        open: ['http://localhost:8080/html/index.html']
+        open: ['http://localhost:8080/index.html']
     },
     // ? if we are in development mode add source-maps, otherwise "stay silent"
     devtool: isDev ? 'source-map' : false,

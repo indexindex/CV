@@ -1,0 +1,28 @@
+@use '../utilities' as *;
+
+.pointer {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--color-white);
+    transform: rotate(180deg);
+    transition: opacity .3s var(--transition);
+    // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
+    animation: 2s var(--transition) 0s infinite alternate forwards running float;
+
+    &.preferences-pointer {
+        top: pxToRem(10px);
+        left: 3rem;
+        z-index: 21;
+    }
+
+    &.profile-pointer {
+        top: 5px;
+        left: 7rem;
+        z-index: 11;
+    }
+
+    &.skill-view-pointer { top: -5px; }
+
+    &.hide { opacity: 0; }
+}

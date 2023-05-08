@@ -9,7 +9,6 @@
     position: relative;
     min-width: pxToRem(300px);
     min-height: pxToRem(450px);
-    overflow: hidden;
 
     @include respond(tablet) { order: 3; }
 

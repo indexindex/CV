@@ -68,6 +68,17 @@
     }
 }
 
+@keyframes float {
+	0% {
+		transform: translateY(0px) rotate(180deg);
+	}
+	50% {
+		transform: translateY(-5px) rotate(180deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(180deg);
+	}
+}
 
 
 @keyframes welcome {

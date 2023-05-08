@@ -35,6 +35,7 @@ addToSpriter(`${__dirname}/../assets/svg/express.svg`);
 addToSpriter(`${__dirname}/../assets/svg/facebook-f.svg`);
 addToSpriter(`${__dirname}/../assets/svg/gear-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/graduation-cap-solid.svg`);
+addToSpriter(`${__dirname}/../assets/svg/hand-pointer-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/html5.svg`);
 addToSpriter(`${__dirname}/../assets/svg/jquery.svg`);
 addToSpriter(`${__dirname}/../assets/svg/js.svg`);
