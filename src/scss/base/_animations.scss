@@ -45,6 +45,11 @@
     }
 }
 
+@keyframes rotate {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
 @keyframes reverseProfile {
     0% {
         width: pxToRem(450px);

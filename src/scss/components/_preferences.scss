@@ -31,6 +31,8 @@
                     border-radius .5s var(--transition),
                     background-color .5s var(--transition);
 
+        .gear-solid { animation-play-state: paused; }
+
         .preferences__options {
             opacity: 1;
             transition: opacity .3s var(--transition) .5s;
@@ -49,6 +51,9 @@
         grid-row: 1 / 2;
         cursor: pointer;
         z-index: 21;
+
+        // ? @keyframes name | duration | direction | iteration-count
+        animation: rotate 10s linear infinite;
     }
 
     &__options {
