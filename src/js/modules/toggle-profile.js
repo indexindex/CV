@@ -13,7 +13,16 @@ const toggleProfile = {
             profileImg.classList.add('unclickable');
 
             if (isOpen) {
+                // ? small animation reversal trick
+                container.classList.remove('open');
+                void container.offsetWidth;
+                container.classList.add('open');
                 container.classList.add('reverse');
+
+                // ? small animation reversal trick
+                preferences.classList.remove('hide');
+                void preferences.offsetWidth;
+                preferences.classList.add('hide');
                 preferences.classList.add('show');
 
                 setTimeout(() => {

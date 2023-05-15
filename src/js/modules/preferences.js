@@ -47,11 +47,11 @@ const preferences = {
         colorInput1.value = cookie.getCookie('color-primary-set') || primaryColor.trim();
         colorInput2.value = cookie.getCookie('color-secondary-set') || secondaryColor.trim();
 
-        colorInput1.addEventListener('change', ({ target }) => {
+        colorInput1.addEventListener('input', ({ target }) => {
             changeColor('--color-primary', target.value);
             cookie.setCookie('color-primary-set', target.value, 1);
         })
-        colorInput2.addEventListener('change', ({ target }) => {
+        colorInput2.addEventListener('input', ({ target }) => {
             changeColor('--color-secondary', target.value);
             cookie.setCookie('color-secondary-set', target.value, 1);
         })

@@ -33,57 +33,22 @@
             border-radius: pxToRem(10px);
         }
     }
-
-    @keyframes reverseProfile {
-        from {
-            width: calc(100% - 3rem);
-            height: pxToRem(450px);
-            object-position: center;
-            border: 3px solid var(--color-secondary);
-            border-radius: pxToRem(10px);
-        }
-    }
 }
 
+
+
 @keyframes rotate {
-    from { transform: rotate(0); }
+    from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-@keyframes reverseProfile {
-    0% {
-        width: pxToRem(450px);
-        height: pxToRem(450px);
-        object-position: center;
-        border: 3px solid var(--color-secondary);
-        border-radius: pxToRem(10px);
-    }
-
-    75% {
-        width: pxToRem(150px);
-        height: pxToRem(150px);
-    }
-
-    100% {
-        width: pxToRem(174px);
-        height: pxToRem(174px);
-        object-position: 0 pxToRem(-25px);
-        border: pxToRem(12px) solid var(--color-secondary);
-        border-radius: 50%;
-    }
-}
-
+// ? currently rotated for icons
 @keyframes float {
-	0% {
-		transform: translateY(0px) rotate(180deg);
-	}
-	50% {
-		transform: translateY(-5px) rotate(180deg);
-	}
-	100% {
-		transform: translateY(0px) rotate(180deg);
-	}
+	from { transform: translateY(0px) rotate(180deg); }
+	50% { transform: translateY(-5px) rotate(180deg); }
+	to { transform: translateY(0px) rotate(180deg); }
 }
+
 
 
 @keyframes welcome {

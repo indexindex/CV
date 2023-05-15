@@ -58,7 +58,7 @@ body {
             // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
             animation: .5s var(--transition) 0s 1 alternate forwards running sectionBorder;
 
-            & > * {
+            & > *:not(.pointer) {
                 opacity: 0;
                 // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
                 animation: .5s var(--transition) .5s 1 alternate forwards running contentOpacity;

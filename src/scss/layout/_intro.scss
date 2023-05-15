@@ -30,6 +30,7 @@
             border-radius: 50%;
             cursor: pointer;
             z-index: 10;
+            animation-direction: alternate-reverse;
         }
 
         &.open img {
@@ -37,7 +38,7 @@
             animation: 1s var(--transition) 0s 1 alternate forwards running expandProfile;
         }
 
-        &.reverse img { animation-name: reverseProfile; }
+        &.reverse img { animation-direction: alternate-reverse; }
     }
 
     &__sections {

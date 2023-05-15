@@ -39,6 +39,13 @@
         }
     }
 
+    &.hide {
+        // ? @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name
+        animation: 1s var(--transition) 0s 1 alternate-reverse forwards running contentOpacity;
+
+        &.show { animation-direction: alternate; }
+    }
+
     svg {
         width: 2rem;
         height: 2rem;
