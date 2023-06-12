@@ -33,6 +33,7 @@ addToSpriter(`${__dirname}/../assets/svg/earth-europe-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/envelope-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/express.svg`);
 addToSpriter(`${__dirname}/../assets/svg/facebook-f.svg`);
+addToSpriter(`${__dirname}/../assets/svg/firebase.svg`);
 addToSpriter(`${__dirname}/../assets/svg/gear-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/graduation-cap-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/hand-pointer-solid.svg`);
@@ -54,6 +55,7 @@ addToSpriter(`${__dirname}/../assets/svg/roadmap.svg`);
 addToSpriter(`${__dirname}/../assets/svg/sass.svg`);
 addToSpriter(`${__dirname}/../assets/svg/typescript.svg`);
 addToSpriter(`${__dirname}/../assets/svg/webpack.svg`);
+addToSpriter(`${__dirname}/../assets/svg/wordpress.svg`);
 addToSpriter(`${__dirname}/../assets/svg/yarn.svg`);
 addToSpriter(`${__dirname}/../assets/svg/zurb.svg`);
 

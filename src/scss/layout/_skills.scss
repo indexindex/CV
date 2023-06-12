@@ -132,6 +132,13 @@
             .skill-mongodb {
                 transform: translate(pxToRem(-18px), pxToRem(-40px));
             }
+            .skill-firebase {
+                width: 1.5rem;
+                transform: translate(pxToRem(-80px), pxToRem(-50px));
+            }
+            .skill-wordpress {
+                transform: translate(pxToRem(50px), pxToRem(-14px));
+            }
             .skill-webpack {
                 transform: translate(pxToRem(-35px), pxToRem(-14px));
             }
@@ -153,7 +160,7 @@
         // ? main center line
         &--branch-main {
             width: pxToRem(6px);
-            height: pxToRem(600px);
+            height: pxToRem(650px);
             border-radius: 5px;
             background-color: var(--color-secondary);
             z-index: 1;
@@ -206,6 +213,12 @@
             height: pxToRem(35px);
             transform: translate(pxToRem(-42px), pxToRem(280px));
         }
+        &--branch-cms {
+            width: pxToRem(45px);
+            height: 4px;
+            background-color: var(--color-secondary);
+            transform: translate(pxToRem(25px), pxToRem(410px));
+        }
         &--branch-bundlers,
         &--branch-pkgmanagers {
             width: pxToRem(65px);
@@ -213,10 +226,10 @@
             background-color: var(--color-secondary);
         }
         &--branch-bundlers {
-            transform: translate(pxToRem(-35px), pxToRem(410px));
+            transform: translate(pxToRem(-35px), pxToRem(480px));
         }
         &--branch-pkgmanagers {
-            transform: translate(pxToRem(35px), pxToRem(480px));
+            transform: translate(pxToRem(35px), pxToRem(550px));
         }
     }
 
