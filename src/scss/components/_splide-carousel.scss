@@ -1,6 +1,6 @@
 @use '../utilities' as *;
 
-#image-carousel {
+#project-carousel {
     justify-self: center;
 
     .splide__arrow {
@@ -8,12 +8,24 @@
         transition: opacity .3s var(--transition);
     
         &:hover { opacity: 1; }
-    
-        &--prev > svg,
-        &--next > svg { fill: var(--color-white); }
-    
-        &--prev > svg { transform: unset; }
-        &--next > svg { transform: rotate(180deg); }
+
+        &--prev {
+            top: 5px;
+
+            & > svg {
+                fill: var(--color-white);
+                transform: unset;
+            }
+        }
+
+        &--next {
+            bottom: 5px;
+
+            & > svg {
+                fill: var(--color-white);
+                transform: rotate(180deg);
+            }
+        }
     }
 
     .splide__slide {

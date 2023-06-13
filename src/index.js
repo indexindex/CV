@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
 
-    new Splide('#image-carousel', {
+    new Splide('#project-carousel', {
         rewind: true,
         speed: 200,
         rewindSpeed: 400,
