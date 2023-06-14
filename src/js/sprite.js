@@ -46,6 +46,7 @@ addToSpriter(`${__dirname}/../assets/svg/list-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/map-pin-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/mobile-screen-button-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/mongodb.svg`);
+addToSpriter(`${__dirname}/../assets/svg/mouse.svg`);
 addToSpriter(`${__dirname}/../assets/svg/node.svg`);
 addToSpriter(`${__dirname}/../assets/svg/npm.svg`);
 addToSpriter(`${__dirname}/../assets/svg/palette-solid.svg`);
