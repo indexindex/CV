@@ -110,12 +110,14 @@
                 fill: #00A6C9;
             }
             .skill-js {
+                display: block;
+                margin: 0 0 0 auto;
                 transform: translate(pxToRem(18px), pxToRem(-29px));
                 fill: #FFDF00;
             }
             .skill-react {
                 width: 1.5rem;
-                transform: translate(pxToRem(35px), pxToRem(-100px));
+                transform: translate(pxToRem(35px), pxToRem(-95px));
                 fill: #61DAFB;
             }
             .skill-typescript {
