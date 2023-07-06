@@ -83,6 +83,7 @@
             p { text-align: center; }
 
             &__inputs,
+            &__complimentary-inputs,
             &__options {
                 margin-top: .5rem;
 
@@ -97,6 +98,11 @@
                     &::-webkit-color-swatch-wrapper { padding: 0; }
                 }
             }
+
+            &__inputs + p,
+            &__reset { margin-top: 1rem; }
+
+            &__reset { cursor: pointer; }
 
             &__options {
                 display: flex;

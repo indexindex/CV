@@ -19,6 +19,7 @@ const addToSpriter = (path) => {
 addToSpriter(`${__dirname}/../assets/svg/adobe-illustrator.svg`);
 addToSpriter(`${__dirname}/../assets/svg/adobe-premiere-pro.svg`);
 addToSpriter(`${__dirname}/../assets/svg/angle-up-solid.svg`);
+addToSpriter(`${__dirname}/../assets/svg/arrow-rotate-left-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/arrow-up-right-from-square-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/book-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/bootstrap.svg`);

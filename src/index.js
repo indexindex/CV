@@ -67,3 +67,14 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }).mount();
 })
+
+document.body.addEventListener('click', ({ target }) => {
+    // if ((!target.classList.contains('gear-solid') && target.getAttribute('href').indexOf('#gear-solid') === -1) &&
+    //     document.querySelector('.preferences').classList.contains('open')) {
+    //     preferences.target.click();
+    // }
+    // if (target.getAttribute('alt') !== 'profile-img' &&
+    //     document.querySelector('.intro__profile').classList.contains('open')) {
+    //     toggleProfile.profileImg.click();
+    // }
+})

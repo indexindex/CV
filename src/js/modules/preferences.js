@@ -8,6 +8,8 @@ const preferences = {
     profileImg: document.querySelector('.intro__profile > img'),
     colorInput1: document.querySelector('#primary-color-theme'),
     colorInput2: document.querySelector('#secondary-color-theme'),
+    complimentaryInputs: document.querySelectorAll('.color-theme__complimentary-inputs--input'),
+    colorThemeReset: document.querySelector('.color-theme__reset'),
     switcherSections: document.querySelector('#switcher-sections'),
     switcherMotion: document.querySelector('#switcher-motion'),
     initialize() {
@@ -32,7 +34,7 @@ const preferences = {
         this.reduceAnimations();
     },
     colorTheme() {
-        const { colorInput1, colorInput2 } = this;
+        const { colorInput1, colorInput2, complimentaryInputs, colorThemeReset } = this;
         const rootStyles = getComputedStyle(document.documentElement);
         const primaryColor = rootStyles.getPropertyValue('--color-primary');
         const secondaryColor = rootStyles.getPropertyValue('--color-secondary');
@@ -54,6 +56,34 @@ const preferences = {
         colorInput2.addEventListener('input', ({ target }) => {
             changeColor('--color-secondary', target.value);
             cookie.setCookie('color-secondary-set', target.value, 1);
+        })
+
+        complimentaryInputs.forEach(input => {
+            switch(input.getAttribute('id')) {
+                case 'red':
+                    input.value = '#c62d2d';
+                    break;
+                case 'green':
+                    input.value = '#2dc653';
+                    break;
+                case 'purple':
+                    input.value = '#a02dc6';
+                    break;
+                case 'yellow':
+                    input.value = '#c6aa2d';
+                    break;
+            }
+
+            input.addEventListener('click', (event) => {
+                event.preventDefault();
+                changeColor('--color-secondary', event.target.value);
+                cookie.setCookie('color-secondary-set', event.target.value, 1);
+            })
+        })
+
+        colorThemeReset.addEventListener('click', () => {
+            changeColor('--color-secondary', secondaryColor);
+            cookie.setCookie('color-secondary-set', secondaryColor, 0);
         })
     },
     reduceAnimations() {
