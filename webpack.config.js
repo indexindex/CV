@@ -70,14 +70,6 @@ const optimization = () => {
             new TerserWebpackPlugin({
                 terserOptions: { format: { comments: false } },
                 extractComments: false
-            }),
-            new ImageMinimizerWebpackPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerWebpackPlugin.sharpMinify,
-                    options: {
-                        encodeOptions: { jpeg: { quality: 60 }, png: { quality: 60 } }
-                    }
-                }
             })
         ]
     }
@@ -118,7 +110,15 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin(makePage('index.html')),
         // ? bundled css file (name refers to entry file name)
-        new CSSMiniExtractPlugin({ filename: 'css/[name].css' })
+        new CSSMiniExtractPlugin({ filename: 'css/[name].css' }),
+        new ImageMinimizerWebpackPlugin({
+            minimizer: {
+                implementation: ImageMinimizerWebpackPlugin.sharpMinify,
+                options: {
+                    encodeOptions: { jpeg: { quality: 60 }, png: { quality: 60 } }
+                }
+            }
+        })
     ],
     module: {
         rules: [
