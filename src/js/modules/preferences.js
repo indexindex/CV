@@ -61,23 +61,22 @@ const preferences = {
         complimentaryInputs.forEach(input => {
             switch(input.getAttribute('id')) {
                 case 'red':
-                    input.value = '#c62d2d';
+                    input.style.backgroundColor = '#c62d2d';
                     break;
                 case 'green':
-                    input.value = '#2dc653';
+                    input.style.backgroundColor = '#2dc653';
                     break;
                 case 'purple':
-                    input.value = '#a02dc6';
+                    input.style.backgroundColor = '#a02dc6';
                     break;
                 case 'yellow':
-                    input.value = '#c6aa2d';
+                    input.style.backgroundColor = '#c6aa2d';
                     break;
             }
 
-            input.addEventListener('click', (event) => {
-                event.preventDefault();
-                changeColor('--color-secondary', event.target.value);
-                cookie.setCookie('color-secondary-set', event.target.value, 1);
+            input.addEventListener('click', ({ target }) => {
+                changeColor('--color-secondary', target.style.backgroundColor);
+                cookie.setCookie('color-secondary-set', target.style.backgroundColor, 1);
             })
         })
 

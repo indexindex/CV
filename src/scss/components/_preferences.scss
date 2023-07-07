@@ -102,6 +102,12 @@
             &__inputs + p,
             &__reset { margin-top: 1rem; }
 
+            &__complimentary-inputs {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
             &__reset { cursor: pointer; }
 
             &__options {
