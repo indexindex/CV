@@ -95,7 +95,12 @@ const preferences = {
                     break;
             }
 
-            input.addEventListener('click', ({ target }) => { inputChange('color-secondary', target.getAttribute('data-color-hex'), 1); })
+            input.addEventListener('click', ({ target }) => {
+                colorInput1.value = primaryColor;
+                colorInput2.value = secondaryColor;
+                inputChange('color-primary', primaryColor, 1);
+                inputChange('color-secondary', target.getAttribute('data-color-hex'), 1);
+            })
         })
 
         colorThemeReset.addEventListener('click', () => {

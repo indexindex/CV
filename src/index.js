@@ -69,12 +69,25 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 document.body.addEventListener('click', ({ target }) => {
-    // if ((!target.classList.contains('gear-solid') && target.getAttribute('href').indexOf('#gear-solid') === -1) &&
-    //     document.querySelector('.preferences').classList.contains('open')) {
-    //     preferences.target.click();
-    // }
-    // if (target.getAttribute('alt') !== 'profile-img' &&
-    //     document.querySelector('.intro__profile').classList.contains('open')) {
-    //     toggleProfile.profileImg.click();
-    // }
+    // ? preferences window logic when clicked outside
+    const notTogglePref = !target.closest('.preferences');
+    const togglePrefOpen = preferences.container.classList.contains('open');
+    const togglePrefClickable = !preferences.container.classList.contains('unclickable');
+
+    if (notTogglePref && togglePrefOpen) {
+        if (togglePrefClickable) {
+            // ? programmatical click event trigger for svg elements
+            // ? "bubbles: true" adds natural behavior of a user click, where the click event bubbles up through the DOM hierarchy
+            preferences.target.dispatchEvent(new Event('click', { bubbles: true }));
+        }
+    }
+
+    // ? profile image window logic when clicked outside
+    const notProfileIMG = target.getAttribute('alt') !== 'profile-img';
+    const profileIMGOpen = toggleProfile.container.classList.contains('open');
+    const profileIMGClickable = !toggleProfile.profileImg.classList.contains('unclickable');
+
+    if (notProfileIMG && profileIMGOpen) {
+        if (profileIMGClickable) { toggleProfile.profileImg.click(); }
+    }
 })
