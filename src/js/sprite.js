@@ -41,6 +41,7 @@ addToSpriter(`${__dirname}/../assets/svg/hand-pointer-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/html5.svg`);
 addToSpriter(`${__dirname}/../assets/svg/jquery.svg`);
 addToSpriter(`${__dirname}/../assets/svg/js.svg`);
+addToSpriter(`${__dirname}/../assets/svg/language-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/layer-group-solid.svg`);
 addToSpriter(`${__dirname}/../assets/svg/linkedin-in.svg`);
 addToSpriter(`${__dirname}/../assets/svg/list-solid.svg`);
